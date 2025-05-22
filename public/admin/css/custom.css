@@ -1,0 +1,42 @@
+.stock_status_style
+{
+    padding: 5px 15px 26px;
+    background-color: #efefef;
+    border: 1px solid;
+    border-color: #cdcdcd;
+}
+.price_range_style
+{
+    padding: 10px 15px;
+    background-color: #e8e8e8;
+    border: 1px solid #c5c5c5;
+}
+.category-tree,
+.category-tree ul {
+    list-style-type: none;
+    padding-left: 15px; /* or 0 for no indent */
+    margin-left: 0;
+}
+.attribute-value.selected {
+    border: 2px solid #007bff;
+}
+
+.email-settings-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.email-settings-table th:nth-child(1),
+.email-settings-table td:nth-child(1) {
+    width: 30%;
+}
+
+.email-settings-table th:nth-child(2),
+.email-settings-table td:nth-child(2) {
+    width: 50%;
+}
+
+.email-settings-table th:nth-child(3),
+.email-settings-table td:nth-child(3) {
+    width: 20%;
+}
