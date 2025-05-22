@@ -19,6 +19,7 @@ use App\Http\Controllers\web\ShopController;
 use App\Http\Controllers\web\CartController;
 use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\CategoryPageController;
+use App\Http\Controllers\web\PageController;
 
 Route::prefix('admin')->group(function(){
     Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
@@ -101,7 +102,7 @@ Route::prefix('web')->middleware(['log.device'])->group(function () {
     Route::get('/category/{name}', [CategoryPageController::class, 'index'])->name('catgory.page.index');
     Route::get('/category/{name}/{subcategory}', [CategoryPageController::class, 'getProductByCategory'])->name('catgory.page.products');
     
-    
+    Route::get('/about-us', [PageController::class, 'about'])->name('about');
 });
 
 Route::prefix('web_front')->group(function (){

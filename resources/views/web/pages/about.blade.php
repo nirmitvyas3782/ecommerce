@@ -1,4 +1,4 @@
-@extends('web.layouts.app')
+@extends('web.layout.home')
 
 @section('content')
 <section class="about-section py-5 bg-light">
@@ -77,7 +77,7 @@
                 <p class="fs-5 mb-4">
                     At Deedy, we’re more than just suppliers – we’re creative partners in your project’s success. Whether you're staging a set, designing an office, or creating an unforgettable event, we're here to help you source the perfect pieces with confidence and creativity.
                 </p>
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-lg shadow">Let’s bring your vision to life</a>
+                <a href="#" class="btn btn-primary btn-lg shadow">Let’s bring your vision to life</a>
             </div>
         </div>
     </div>
