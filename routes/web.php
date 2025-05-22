@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\ViewOrderController;
 
 use App\Http\Controllers\web_front\MainController;
 
@@ -27,7 +28,7 @@ Route::prefix('admin')->group(function(){
 Route::prefix('admin')->middleware(['auth.custom'])->group(function () {
     
     
-    Route::post('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
     
     
     /* Dashboard */
@@ -66,7 +67,13 @@ Route::prefix('admin')->middleware(['auth.custom'])->group(function () {
     Route::post('/update_alt', [ImageUploadController::class, 'updateAltText'])->name('image.updateAlt');
     Route::delete('/delete', [ImageUploadController::class, 'deleteImage'])->name('image.delete');
 
+    /*Orders*/
     
+    Route::get('/orders', [ViewOrderController::class, 'index'])->name('order.index');
+    Route::get('/order/{id}', [ViewOrderController::class, 'show'])->name('order.show');
+    Route::put('/order/{id}', [ViewOrderController::class, 'update'])->name('order.update');
+    Route::delete('/order/{id}', [ViewOrderController::class, 'destroy'])->name('order.destroy');
+    Route::post('/orders/{id}/update-status', [ViewOrderController::class, 'updateStatus'])->name('orders.updateStatus');
     
 });
 

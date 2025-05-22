@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Product;
 use App\Models\Device;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -37,7 +38,10 @@ class DashboardController extends Controller
             $visitPercentageChange = (($totalVisits - $previousTotalVisits) / $previousTotalVisits) * 100;
         }
 
-        return view('admin.pages.dashboard.index', compact('data', 'totalProducts', 'percentageChange', 'totalVisits','visitPercentageChange'));
+        $totalOrderValue = Order::all()->sum('total');
+        $totalOrder = Order::all()->count();
+        
+        return view('admin.pages.dashboard.index', compact('data', 'totalProducts', 'percentageChange', 'totalVisits','visitPercentageChange','totalOrderValue','totalOrder'));
     }
 
     /**

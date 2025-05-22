@@ -10,10 +10,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <h6 class="text-uppercase font-size-12 text-muted mb-3">Total Order Value</h6>
-                            <span class="h3 mb-0"> ₹85.50 </span>
-                        </div>
-                        <div class="col-auto">
-                            <span class="badge badge-soft-success">+7.5%</span>
+                            <span class="h3 mb-0"> ₹{{ number_format($totalOrderValue, 2) }} </span>
                         </div>
                     </div> <!-- end row -->
 
@@ -27,11 +24,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h6 class="text-uppercase font-size-12 text-muted mb-3">Total Users</h6>
-                            <span class="h3 mb-0"> 3000 </span>
-                        </div>
-                        <div class="col-auto">
-                            <span class="badge badge-soft-danger">-24.5%</span>
+                            <h6 class="text-uppercase font-size-12 text-muted mb-3">Order Received</h6>
+                            <span class="h3 mb-0"> {{ $totalOrder }} </span>
                         </div>
                     </div> <!-- end row -->
 
