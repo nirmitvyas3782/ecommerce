@@ -66,7 +66,7 @@
                                         <label class="form-check-label" for="cartCheckbox{{ $item->product->id }}"></label>
                                     </td>
                                     <td class="image product-thumbnail pt-40"><img
-                                            src="{{ asset('upload/product_images' . '/' . $item['image_name']) }}"
+                                            src="{{ asset('upload/product_images' . '/' . $item->product->image_name) }}"
                                             alt="{{ $item->product->name }}"></td>
                                     <td class="product-des product-name">
                                         <h6 class="mb-5"><a class="product-name mb-10 text-heading"
@@ -169,7 +169,6 @@
                     <form class="field_form" method="POST" action="{{ route('checkout.place') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="company_name" placeholder="Enter your email" required="required" class="mb-3" />
                             <input type="text" name="user_phone" placeholder="Enter your Phone Number" required="required" />
                         </div>
                         <button type="submit" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></button>

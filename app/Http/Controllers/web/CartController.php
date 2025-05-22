@@ -50,9 +50,10 @@ class CartController extends Controller
         $data = ['title' => 'Deedy Supply Portal'];
 
         $cart = $this->getOrCreateCart()->load('items.product');
-
+        
         // Extract items and calculate total
         $cartItems = $cart->items;
+        
         
         $cartTotal = $cartItems->sum(function ($item) {
             return $item->price * $item->quantity;

@@ -42,12 +42,11 @@ class OrderController extends Controller
 
             $order = Order::create([
                 'user_id' => 1,
-                'company_name' => $request->user_email,
                 'user_phone' => $request->user_phone,
                 'status' => 'processing',
                 'total' => $cart->items->sum(fn($item) => $item->price * $item->quantity),
             ]);
-
+            
             foreach ($cart->items as $item) {
                 OrderItem::create([
                     'order_id' => $order->id,

@@ -125,7 +125,7 @@
                                     <img alt="Nest" src="/web/imgs/theme/icons/icon-cart.svg" />
                                     <span class="pro-count blue">2</span>
                                 </a>
-                                <a href="shop-cart.html"><span class="lable">Cart</span></a>
+                                <a href="{{ route('cart.view') }}"><span class="lable">Cart</span></a>
 
 
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -163,7 +163,6 @@
                                         </div>
                                         <div class="shopping-cart-button">
                                             <a href="{{ route('cart.view') }}" class="outline">View cart</a>
-                                            <a href="shop-checkout.html">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
